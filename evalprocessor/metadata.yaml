@@ -1,0 +1,6 @@
+type: eval
+
+status:
+  class: processor
+  stability:
+    development: [logs]

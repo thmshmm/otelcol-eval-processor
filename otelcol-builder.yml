@@ -1,0 +1,16 @@
+dist:
+  name: otelcol-custom
+  description: OpenTelemetry Collector binary
+  output_path: ./dist
+
+exporters:
+  - gomod: go.opentelemetry.io/collector/exporter/debugexporter v0.89.0
+
+receivers:
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/filelogreceiver v0.89.0
+
+processors:
+  - gomod: go.opentelemetry.io/collector/processor/batchprocessor v0.89.0
+  - gomod: github.com/thmshmm/otelcol-eval-processor v0.0.0
+    name: "evalprocessor"
+    path: ./evalprocessor

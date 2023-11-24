@@ -1,0 +1,30 @@
+receivers:
+  filelog:
+    include: [ '/tmp/simple.log' ] # 2023-06-19 05:20:50 ERROR This is a test error message
+    operators:
+      - type: regex_parser
+        regex: '^(?P<time>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) (?P<sev>[A-Z]*) (?P<msg>.*)$'
+        timestamp:
+          parse_from: attributes.time
+          layout: '%Y-%m-%d %H:%M:%S'
+        severity:
+          parse_from: attributes.sev
+
+processors:
+  eval:
+    url: http://mockoon:8086/eval
+    timeout_seconds: 2
+
+exporters:
+  debug:
+    verbosity: detailed
+
+extensions:
+
+service:
+  extensions:
+  pipelines:
+    logs:
+      receivers: [filelog]
+      processors: [eval]
+      exporters: [debug]

@@ -1,0 +1,79 @@
+{
+  "uuid": "48264ae1-cbe2-4cf5-94b6-cc563a630219",
+  "lastMigration": 29,
+  "name": "Mock",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 8086,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "b7c979e8-0085-4d11-a33a-7d822e2ef26d",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "eval",
+      "responses": [
+        {
+          "uuid": "8b55bb19-4850-4ee5-8dc8-413aaa3c2a31",
+          "body": "{\n  \"valid\": {{boolean}}\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "b7c979e8-0085-4d11-a33a-7d822e2ef26d"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": []
+}

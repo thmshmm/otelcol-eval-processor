@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  mockoon:
+    container_name: mockoon
+    image: mockoon-eval
+    build:
+      context: ./mock
+      dockerfile: Dockerfile
+
+  otel-collector:
+    image: otelcol-custom
+    build:
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./otelcol-config.yml:/etc/otelcol/config.yml
